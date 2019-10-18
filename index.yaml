@@ -3,7 +3,7 @@ entries:
   alb-ingress-controller:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-18T12:13:18.4325326-04:00"
+    created: "2019-10-18T12:38:28.0528243-04:00"
     description: A Helm chart for Kubernetes
     digest: eb4412c120ea6f05ac083c537d06b5f1b04e862d26cd36527e1874f625bb148e
     name: alb-ingress-controller
@@ -12,7 +12,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-18T12:13:18.4315693-04:00"
+    created: "2019-10-18T12:38:28.0520267-04:00"
     description: A Helm chart for Kubernetes
     digest: 10659098782d5c33560bacdb48fb6663467101d8f0675287dc8d878015229ec2
     name: alb-ingress-controller
@@ -22,16 +22,25 @@ entries:
   mynode:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-18T12:13:18.4341932-04:00"
+    created: "2019-10-18T12:38:28.0552105-04:00"
     description: A Helm chart for Kubernetes
-    digest: 348f90a90af87d2c38602af56d8f105f96b38fe6a4369fe81a78d44b2de0b3c0
+    digest: 7475275da526ac312f464ccb48d4bc8edacc524320003d773d9b130f5e3653fe
+    name: mynode
+    urls:
+    - mynode-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-10-18T12:38:28.0544114-04:00"
+    description: A Helm chart for Kubernetes
+    digest: 4671a5c831d9bbcdd12e293eb8177310a631973ab00ce9c24fa5fa16f379fd7b
     name: mynode
     urls:
     - mynode-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-18T12:13:18.4334881-04:00"
+    created: "2019-10-18T12:38:28.0536381-04:00"
     description: A Helm chart for Kubernetes
     digest: 74cf2360560404920cf8c1b4b18243dd48a109ca9ad1511894353dc27eb46c1c
     name: mynode
@@ -41,7 +50,7 @@ entries:
   nginx:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-18T12:13:18.4349293-04:00"
+    created: "2019-10-18T12:38:28.0559605-04:00"
     description: A Helm chart for Kubernetes
     digest: 2559628608f6c49cf9f16ed834f4a0c751a475d7267ca293bf6b33de8ed9d151
     name: nginx
@@ -51,11 +60,11 @@ entries:
   node-app:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-18T12:13:18.4357526-04:00"
+    created: "2019-10-18T12:38:28.0566601-04:00"
     description: A Helm chart for Kubernetes
     digest: 373322a0de72234ef721deed70f3c188144ac254ff85764f283064b0dd4dd984
     name: node-app
     urls:
     - node-app-0.1.0.tgz
     version: 0.1.0
-generated: "2019-10-18T12:13:18.4291815-04:00"
+generated: "2019-10-18T12:38:28.0508706-04:00"
