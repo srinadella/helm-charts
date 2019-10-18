@@ -4,9 +4,6 @@ metadata:
   name: "node-app"
   namespace: {{ .Values.namespace }}
 spec:
-  {{- with .Values.imagePullSecrets }}
-    imagePullSecrets:
-      {{- toYaml . | nindent 8 }}
   replicas: {{ .Values.replicaCount }}
   template:
     metadata:
@@ -19,5 +16,5 @@ spec:
         name: node-app
         ports:
         - containerPort: 80
-      # imagePullSecrets:
-      # - name: docregsec
+      imagePullSecrets:
+      - name: docregsec
