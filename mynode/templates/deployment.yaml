@@ -11,7 +11,7 @@ spec:
         app: node-app
     spec:
       containers:
-      - image: {{ .Values.images.repository }}:{{ .Values.images.tag }}
+      - image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.images.pullPolicy }}
         name: node-app
         ports:
