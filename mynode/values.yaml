@@ -6,7 +6,7 @@ namespace: develop
 replicaCount: 2
 
 image:
-  repository: cnadella/node-web-app
+  repository: cnadella/docker-test
   tag: 31
   pullPolicy: IfNotPresent
   imagePullSecrets: []
@@ -14,7 +14,7 @@ image:
 service:
   type: NodePort
   port: 3000
-  targetPort: 3000
+  targetPort: 8000
 
 ingress:
   enabled: false

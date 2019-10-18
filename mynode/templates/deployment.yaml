@@ -15,6 +15,6 @@ spec:
         imagePullPolicy: IfNotPresent
         name: node-app
         ports:
-        - containerPort: 80
+        - containerPort: 8000
       imagePullSecrets:
       - name: docregsec
