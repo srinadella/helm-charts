@@ -3,11 +3,21 @@ entries:
   nginx:
   - apiVersion: v1
     appVersion: "1.0"
-    created: "2019-10-18T13:50:14.22195717Z"
+    created: "2019-10-18T14:01:50.572503621Z"
     description: A Helm chart for Kubernetes
     digest: 2559628608f6c49cf9f16ed834f4a0c751a475d7267ca293bf6b33de8ed9d151
     name: nginx
     urls:
     - nginx-0.1.0.tgz
     version: 0.1.0
-generated: "2019-10-18T13:50:14.221482111Z"
+  node-app:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: "2019-10-18T14:01:50.572788096Z"
+    description: A Helm chart for Kubernetes
+    digest: 84b4330677b7c530692881793ddc416f2f2db3d396d615afd04d751003a2408d
+    name: node-app
+    urls:
+    - node-app-0.1.0.tgz
+    version: 0.1.0
+generated: "2019-10-18T14:01:50.572023587Z"
