@@ -1,0 +1,23 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: "node-app"
+  namespace: {{ .Values.namespace }}
+spec:
+  {{- with .Values.imagePullSecrets }}
+    imagePullSecrets:
+      {{- toYaml . | nindent 8 }}
+  replicas: {{ .Values.replicaCount }}
+  template:
+    metadata:
+      labels:
+        app: node-app
+    spec:
+      containers:
+      - image: {{ .Values.images.repository }}:{{ .Values.images.tag }}
+        imagePullPolicy: {{ .Values.images.pullPolicy }}
+        name: node-app
+        ports:
+        - containerPort: 80
+      # imagePullSecrets:
+      # - name: docregsec
