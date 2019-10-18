@@ -21,11 +21,6 @@ ingress:
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-    kubernetes.io/ingress.class: alb
-    external-dns.alpha.kubernetes.io/hostname: node.srinadella.com
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS":443}]'
-    alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:625031190962:certificate/886e23ad-a8cf-4d2e-a41b-1c5187ba3831
   path: /
   hosts:
     - node.srinadella.com
