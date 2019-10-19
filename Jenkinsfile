@@ -33,9 +33,12 @@ pipeline {
         }
       }
     }
+
     stage ("Waiting to Make sure Helm Repo Can be pulled in") {
-      echo 'Waiting 5 minutes for deployment to complete prior starting smoke testing'
-      sleep 300 // seconds
+      steps{
+        echo 'Waiting 5 minutes for deployment to complete prior starting smoke testing'
+        sleep 300 // seconds
+      }
     }
     stage('Update Local Helm Repo') {
       steps{
