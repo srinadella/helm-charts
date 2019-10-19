@@ -18,20 +18,20 @@ pipeline {
     stage('Update Local Helm Repo') {
       steps{
         script {
-          sh "helm repo update"
+          sh "/usr/local/bin/helm repo update"
         }
       }
     }
     stage('List Local Helm Repo') {
       steps{
         script {
-          sh "helm search helm-charts"
+          sh "/usr/local/bin/helm search helm-charts"
         }
       }
     }
     stage('Install Heml Chart') {
       steps{
-        sh "helm install mynode helm-charts/mynode"
+        sh "/usr/local/bin/helm install mynode helm-charts/mynode"
       }
     }
   }

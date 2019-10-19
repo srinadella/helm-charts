@@ -8,7 +8,7 @@ pipeline {
   stages {
     stage ("Sleep to Make sure Helm Repo Can be refreshed in") {
       steps{
-      echo 'Waiting 5 minutes for deployment to complete prior starting smoke testing'
+      echo 'Waiting 2 minutes for deployment to complete prior starting packaging'
       sleep 120 // seconds
       }
     }
@@ -20,14 +20,14 @@ pipeline {
     stage('Build helm package') {
       steps{
         script {
-          sh "helm package mynode"
+          sh "/usr/local/bin/helm package mynode"
         }
       }
     }
     stage('Update Repo Index and Commit to Github') {
       steps{
         script {
-          sh "helm repo index ."
+          sh "/usr/local/bin/helm repo index ."
           sh "git add ."
           sh "git commit -m 'Commiting updated Package and Index from Jenkins'"
         }
@@ -36,27 +36,27 @@ pipeline {
 
     stage ("Waiting to Make sure Helm Repo Can be pulled in") {
       steps{
-        echo 'Waiting 5 minutes for deployment to complete prior starting smoke testing'
+        echo 'Waiting 1 minute for deployment to complete prior starting again'
         sleep 60 // seconds
       }
     }
     stage('Update Local Helm Repo') {
       steps{
         script {
-          sh "helm repo update"
+          sh "/usr/local/bin/helm repo update"
         }
       }
     }
     stage('List Local Helm Repo') {
       steps{
         script {
-          sh "helm search helm-charts"
+          sh "/usr/local/bin/helm search helm-charts"
         }
       }
     }
     stage('Install Heml Chart') {
       steps{
-        sh "helm install mynode helm-charts/mynode"
+        sh "/usr/local/bin/helm install mynode helm-charts/mynode"
       }
     }
   }
