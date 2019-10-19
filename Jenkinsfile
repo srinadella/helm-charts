@@ -7,8 +7,10 @@ pipeline {
   agent any
   stages {
     stage ("Waiting to Make sure Helm Repo Can be pulled in") {
+      steps{
       echo 'Waiting 5 minutes for deployment to complete prior starting smoke testing'
       sleep 300 // seconds
+      }
     }
     stage('Cloning Git') {
       steps {
