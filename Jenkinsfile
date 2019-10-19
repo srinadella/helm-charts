@@ -9,7 +9,7 @@ pipeline {
     stage ("Sleep to Make sure Helm Repo Can be refreshed in") {
       steps{
       echo 'Waiting 2 minutes for deployment to complete prior starting packaging'
-      sleep 120 // seconds
+      // sleep 120 // seconds
       }
     }
     stage('Cloning Git') {
@@ -38,7 +38,7 @@ pipeline {
     stage ("Waiting to Make sure Helm Repo Can be pulled in") {
       steps{
         echo 'Waiting 1 minute for deployment to complete prior starting again'
-        sleep 60 // seconds
+        // sleep 60 // seconds
       }
     }
     stage('Update Local Helm Repo') {
