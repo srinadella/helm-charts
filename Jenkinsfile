@@ -20,6 +20,7 @@ pipeline {
     stage('Build helm package') {
       steps{
         script {
+          sh "/usr/local/bin/helm init --client-only"
           sh "/usr/local/bin/helm package mynode"
         }
       }
