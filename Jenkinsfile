@@ -21,7 +21,7 @@ pipeline {
       steps{
         script {
           sh "/usr/local/bin/helm init --client-only"
-          sh "helm repo add --username srinadella --password 6609cc9b6865975880ce77d297fee6095233a422 helm-charts 'https://raw.githubusercontent.com/srinadella/helm-charts/master/'"
+          sh "/usr/local/bin/helm repo add --username srinadella --password 6609cc9b6865975880ce77d297fee6095233a422 helm-charts 'https://raw.githubusercontent.com/srinadella/helm-charts/master/'"
           sh "/usr/local/bin/helm package mynode"
         }
       }
