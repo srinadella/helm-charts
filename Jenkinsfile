@@ -37,7 +37,7 @@ pipeline {
           sh "git add ."
           sh "git commit -m 'Commiting updated Package and Index from Jenkins'"
           sh "git status"
-          sh "git remote set-url origin https://${env.GIT_USER_NAME}:${env.GITPASS}@github.com/${env.GIT_USER_NAME}/project.git"
+          sh "git remote set-url origin https://${env.GIT_USER_NAME}:${env.GITPASS}@github.com/${env.GIT_USER_NAME}/helm-charts.git"
           sh "git push origin master"
         }
       }
