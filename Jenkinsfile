@@ -6,10 +6,10 @@ pipeline {
   }
   agent any
   stages {
-    stage ("Waiting to Make sure Helm Repo Can be pulled in") {
+    stage ("Sleep to Make sure Helm Repo Can be refreshed in") {
       steps{
       echo 'Waiting 5 minutes for deployment to complete prior starting smoke testing'
-      sleep 300 // seconds
+      sleep 120 // seconds
       }
     }
     stage('Cloning Git') {
@@ -17,14 +17,14 @@ pipeline {
         checkout scm
       }
     }
-    stage('Update Local Helm Repo') {
+    stage('Build helm package') {
       steps{
         script {
           sh "helm package mynode"
         }
       }
     }
-    stage('List Local Helm Repo') {
+    stage('Update Repo Index and Commit to Github') {
       steps{
         script {
           sh "helm repo index ."
@@ -37,7 +37,7 @@ pipeline {
     stage ("Waiting to Make sure Helm Repo Can be pulled in") {
       steps{
         echo 'Waiting 5 minutes for deployment to complete prior starting smoke testing'
-        sleep 300 // seconds
+        sleep 60 // seconds
       }
     }
     stage('Update Local Helm Repo') {
