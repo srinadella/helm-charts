@@ -37,7 +37,7 @@ pipeline {
           sh "git add ."
           sh "git commit -m 'Commiting updated Package and Index from Jenkins'"
           sh "git status"
-          sh "git push"
+          sh "git push origin HEAD:master"
         }
       }
     }
