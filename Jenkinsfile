@@ -30,6 +30,8 @@ pipeline {
       steps{
         script {
           sh "/usr/local/bin/helm repo index ."
+          sh "git config --global user.name 'Sri Nadella'"
+          sh "git config --global user.email cnadella@gmail.com"
           sh "git add ."
           sh "git commit -m 'Commiting updated Package and Index from Jenkins'"
         }
