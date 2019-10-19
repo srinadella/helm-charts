@@ -31,9 +31,7 @@ pipeline {
       steps{
         script {
           sh "cp *.tgz /var/lib/jenkins/workspace/helm-repo"
-          build job: 'pipelineA', parameters: [
-                string(name: 'param1', value: "value1")
-                ]
+          build job: 'helm-repo', parameters: []
           // sh "cd /var/lib/jenkins/workspace/helm-repo"
           // sh "pwd"
           // sh "/usr/local/bin/helm repo index ."
