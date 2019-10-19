@@ -39,6 +39,7 @@ pipeline {
       steps{
         echo 'Waiting 1 minute for deployment to complete prior starting again'
         // sleep 60 // seconds
+        echo "$PWD"
       }
     }
     stage('Update Local Helm Repo') {
