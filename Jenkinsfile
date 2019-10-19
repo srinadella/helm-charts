@@ -21,7 +21,7 @@ pipeline {
       steps{
         script {
           sh "/usr/local/bin/helm init --client-only"
-          sh "/usr/local/bin/helm repo add --username srinadella --password ${env.HELM_CHARTS_GIT_TOKEN} helm-charts 'http://raw.githubusercontent.com/srinadella/helm-charts/master/'"
+          sh "/usr/local/bin/helm repo add --username srinadella --password ${env.HELM_CHARTS_GIT_TOKEN} helm-charts 'http://raw.githubusercontent.com/srinadella/helm-repo/master/'"
           sh "/usr/local/bin/helm package mynode"
           sh "ls -al /var/lib/jenkins/workspace/helmBuild/"
         }
@@ -35,7 +35,7 @@ pipeline {
           sh "git config --global user.name 'Sri Nadella'"
           sh "git config --global user.email cnadella@gmail.com"
           sh "git status"
-          sh "git remote set-url origin https://${env.GIT_USER_NAME}:${env.GITPASS}@github.com/${env.GIT_USER_NAME}/helm-charts.git"
+          sh "git remote set-url origin https://${env.GIT_USER_NAME}:${env.GITPASS}@github.com/${env.GIT_USER_NAME}/helm-repo.git"
           sh "git add ."
           sh "git commit -m 'Commiting updated Package and Index from Jenkins'"
           sh "git push origin HEAD:master"
