@@ -66,7 +66,7 @@ pipeline {
     }
     stage('Install Heml Chart') {
       steps{
-        sh "/usr/local/bin/helm install --name mynode helm-charts/mynode"
+        sh "/usr/local/bin/helm update --name mynode helm-charts/mynode"
       }
     }
   }
