@@ -23,6 +23,7 @@ pipeline {
           sh "/usr/local/bin/helm init --client-only"
           sh "/usr/local/bin/helm repo add --username srinadella --password 6609cc9b6865975880ce77d297fee6095233a422 helm-charts 'http://raw.githubusercontent.com/srinadella/helm-charts/master/'"
           sh "/usr/local/bin/helm package mynode"
+          sh "ls -al /var/lib/jenkins/workspace/helmBuild/"
         }
       }
     }
@@ -30,6 +31,7 @@ pipeline {
       steps{
         script {
           sh "/usr/local/bin/helm repo index ."
+          sh "git remote show origin"
           sh "git config --global user.name 'Sri Nadella'"
           sh "git config --global user.email cnadella@gmail.com"
           sh "git add ."
