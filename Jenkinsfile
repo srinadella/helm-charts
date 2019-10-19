@@ -30,7 +30,7 @@ pipeline {
     stage('Update Repo Index and Commit to Github') {
       steps{
         script {
-          sh "cd /var/lib/jenkins/workspace/helmRepo"
+          sh "cd /var/lib/jenkins/workspace/helm-repo"
           sh "/usr/local/bin/helm repo index ."
           sh "git remote show origin"
           sh "git config --global user.name 'Sri Nadella'"
