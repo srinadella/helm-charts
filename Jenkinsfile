@@ -31,6 +31,7 @@ pipeline {
       steps{
         script {
           sh "cd /var/lib/jenkins/workspace/helm-repo"
+          sh "pwd"
           sh "/usr/local/bin/helm repo index ."
           sh "git remote show origin"
           sh "git config --global user.name 'Sri Nadella'"
