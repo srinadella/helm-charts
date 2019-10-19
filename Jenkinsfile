@@ -36,6 +36,7 @@ pipeline {
           sh "git config --global user.email cnadella@gmail.com"
           sh "git add ."
           sh "git commit -m 'Commiting updated Package and Index from Jenkins'"
+          sh "git push"
         }
       }
     }
