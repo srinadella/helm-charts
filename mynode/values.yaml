@@ -8,7 +8,7 @@ replicaCount: 2
 image:
   repository: cnadella/docker-test
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   imagePullSecrets: []
 
 service:
